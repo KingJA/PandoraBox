@@ -5,5 +5,5 @@ some useful rescource
 ### Article
 ### Personal
 * [KingJA的博客](http://kingja.github.io)
-* [KingJA的github](http://kingja.github.com)
+* [KingJA的github](https://github.com/KingJA)
 
