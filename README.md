@@ -11,4 +11,7 @@ some useful rescource
 ### Personal
 * [KingJA的博客](http://kingja.github.io)
 * [KingJA的github](https://github.com/KingJA)
+* 
+### weekly
+* [Android Weekly](http://androidweekly.net/)
 
