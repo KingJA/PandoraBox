@@ -104,17 +104,17 @@ public SwitchMultiButton(Context context) {
  @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        float left = mStrokeWidth * 0.5f;
-        float top = mStrokeWidth * 0.5f;
-        float right = mWidth - mStrokeWidth * 0.5f;
-        float bottom = mHeight - mStrokeWidth * 0.5f;
+        float left = mStrokeWidth * 0.5f;//4
+        float top = mStrokeWidth * 0.5f;//5
+        float right = mWidth - mStrokeWidth * 0.5f;//6
+        float bottom = mHeight - mStrokeWidth * 0.5f;//7
 
         //draw rounded rectangle
         canvas.drawRoundRect(new RectF(left, top, right, bottom), mStrokeRadius, mStrokeRadius, mStrokePaint);
 
         //draw line
         for (int i = 0; i < mTabNum - 1; i++) {
-            canvas.drawLine(perWidth * (i + 1), top, perWidth * (i + 1), bottom, mStrokePaint);
+            canvas.drawLine(perWidth * (i + 1), top, perWidth * (i + 1), bottom, mStrokePaint);//15
         }
         //draw tab and line
         for (int i = 0; i < mTabNum; i++) {
@@ -132,12 +132,12 @@ public SwitchMultiButton(Context context) {
                     canvas.drawRect(new RectF(perWidth * i, top, perWidth * (i + 1), bottom), mFillPaint);
                 }
                 // draw selected text
-                canvas.drawText(tabText, 0.5f * perWidth * (2 * i + 1) - 0.5f * tabTextWidth, mHeight * 0.5f 
+                canvas.drawText(tabText, 0.5f * perWidth * (2 * i + 1) - 0.5f * tabTextWidth, mHeight * 0.5f //32
 + mTextHeightOffset, mUnselectedTextPaint);
 
             } else {
                 //draw unselected text
-                canvas.drawText(tabText, 0.5f * perWidth * (2 * i + 1) - 0.5f * tabTextWidth, mHeight * 0.5f 
+                canvas.drawText(tabText, 0.5f * perWidth * (2 * i + 1) - 0.5f * tabTextWidth, mHeight * 0.5f //37
 + mTextHeightOffset, mSelectedTextPaint);
             }
         }
@@ -147,7 +147,6 @@ public SwitchMultiButton(Context context) {
 
 **第1步**：绘制外层边框
 <br>![stroke](https://github.com/KingJA/SwitchButton/blob/master/img/stroke.png) 
-
 <br>根据用户设置的strokeRadio(圆角半径)绘制外层的边框,默认是矩形，strokeRadio>0则是圆角矩形。**注意** 边框画笔是有width(粗度)的,笔刷的起点在中间的位置，因此我们需要画笔的落笔范围要往内收缩mStrokeWidth /2的距离(Line4-Line7)，这样才能确保画笔完整地出现在画布内。
 
 **第2步**：绘制垂直分割线。
@@ -159,7 +158,7 @@ public SwitchMultiButton(Context context) {
 <br>**注意** 绘制选中矩形要最左边(第一个)和最右边(最后一个)是矩形和半圆角矩形两种情况，因此用路径绘制比较合适(Line23，Line26 )。
 文字绘制比较简单，选中的用上色画笔，else用白色画笔即可(Line33，Line38 )。需要注意的是它们的 **位置** 的摆放。
 
-<br>选中的矩形绘制重点说明下
+<br>选中的矩形绘制用矩形绘制直线和弧线连接而成(5-6应该是直线，没画好)
 <br>![leftPath](https://github.com/KingJA/SwitchButton/blob/master/img/leftPath.png) 
 ```java
 private void drawLeftPath(Canvas canvas, float left, float top, float bottom) {
