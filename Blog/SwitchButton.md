@@ -99,23 +99,7 @@ public SwitchMultiButton(Context context) {
 ```
 
 #### 2.绘制onDraw()
-我们的交互是动态的，要根据点击进行重新绘制。基本的绘制步骤如下：
-
-**第1步**：绘制外层边框
-<br>![stroke](https://github.com/KingJA/SwitchButton/blob/master/img/stroke.png) 
-
-<br>根据用户设置的strokeRadio(圆角半径)绘制外层的边框,默认是矩形，strokeRadio>0则是圆角矩形。**注意** 边框画笔是有width(粗度)的,笔刷的起点在中间的位置，因此我们需要画笔的落笔范围要往内收缩mStrokeWidth /2的距离(Line4-Line7)，这样才能确保画笔完整地出现在画布内。
-
-**第2步**：绘制垂直分割线。
-<br>![line](https://github.com/KingJA/SwitchButton/blob/master/img/line.png) 
-这步较为简单，根据传入的字符串集合的size()进行宽度等分，drawLine(Line15)。
-
-**第3部**：绘制选中时候的填充矩形(圆角矩形)以及所有文字。
-<br>![selected](https://github.com/KingJA/SwitchButton/blob/master/img/selected.png) 
-<br>![leftPath](https://github.com/KingJA/SwitchButton/blob/master/img/leftPath.png) 
-<br>**注意** 绘制选中矩形要最左边(第一个)和最右边(最后一个)是矩形和半圆角矩形两种情况，因此用路径绘制比较合适(Line23，Line26 )。
-文字绘制比较简单，选中的用上色画笔，else用白色画笔即可(Line33，Line38 )。需要注意的是它们的 **位置** 的摆放。
-
+我们的交互是动态的，要根据点击进行重新绘制。
 ```java
  @Override
     protected void onDraw(Canvas canvas) {
@@ -159,6 +143,39 @@ public SwitchMultiButton(Context context) {
         }
     }
 ```
+基本的绘制步骤如下：
+
+**第1步**：绘制外层边框
+<br>![stroke](https://github.com/KingJA/SwitchButton/blob/master/img/stroke.png) 
+
+<br>根据用户设置的strokeRadio(圆角半径)绘制外层的边框,默认是矩形，strokeRadio>0则是圆角矩形。**注意** 边框画笔是有width(粗度)的,笔刷的起点在中间的位置，因此我们需要画笔的落笔范围要往内收缩mStrokeWidth /2的距离(Line4-Line7)，这样才能确保画笔完整地出现在画布内。
+
+**第2步**：绘制垂直分割线。
+<br>![line](https://github.com/KingJA/SwitchButton/blob/master/img/line.png) 
+<br>这步较为简单，根据传入的字符串集合的size()进行宽度等分，drawLine(Line15)。
+
+**第3部**：绘制选中时候的填充矩形(圆角矩形)以及所有文字。
+<br>![selected](https://github.com/KingJA/SwitchButton/blob/master/img/selected.png) 
+<br>**注意** 绘制选中矩形要最左边(第一个)和最右边(最后一个)是矩形和半圆角矩形两种情况，因此用路径绘制比较合适(Line23，Line26 )。
+文字绘制比较简单，选中的用上色画笔，else用白色画笔即可(Line33，Line38 )。需要注意的是它们的 **位置** 的摆放。
+
+<br>选中的矩形绘制重点说明下
+<br>![leftPath](https://github.com/KingJA/SwitchButton/blob/master/img/leftPath.png) 
+```java
+private void drawLeftPath(Canvas canvas, float left, float top, float bottom) {
+        Path leftPath = new Path();
+        leftPath.moveTo(left + mStrokeRadius, top);//1
+        leftPath.lineTo(perWidth, top);//2
+        leftPath.lineTo(perWidth, bottom);//3
+        leftPath.lineTo(left + mStrokeRadius, bottom);//4
+        leftPath.arcTo(new RectF(left, bottom - 2 * mStrokeRadius, left + 2 * mStrokeRadius, bottom), 90, 90);//5
+        leftPath.lineTo(left, top + mStrokeRadius);//6
+        leftPath.arcTo(new RectF(left, top, left + 2 * mStrokeRadius, top + 2 * mStrokeRadius), 180, 90);//7
+        canvas.drawPath(leftPath, mFillPaint);
+    }
+```
+
+
 
 
 
