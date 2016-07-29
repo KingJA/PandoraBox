@@ -1,5 +1,5 @@
 >版权声明：本文为博主原创文章，未经博主允许不得转载
-转载请标明出处： http://kingja.github.io/
+<br>转载请标明出处： http://kingja.github.io/
 
 ![screenshot](https://github.com/KingJA/SwitchButton/blob/master/img/usage.gif)  
 
@@ -7,7 +7,7 @@
 > 艺术来源于生活
 
 **自定义View**来源于需求，来源于灵感。自定义View如果做的好，就是艺术，就是艺术，就是艺术。
-文章讲的SwitchButton是大家开发过程中经常遇到的切换按钮，提供两个或两个以上的选项。
+<br>文章讲的SwitchButton是大家开发过程中经常遇到的切换按钮，提供两个或两个以上的选项。
 
 ## 正文
 文章是以SwitchButton的实现步骤作为大纲，主要包含以下内容：
@@ -172,7 +172,7 @@ public interface OnSwitchListener {
 ```
 
 ### 事件响应
-这里我们接受用户的点击事件，由点击的位置来决定SwitchButton的选择tab，进行重新绘制。
+这里我们接收用户的点击事件，由点击的位置来决定SwitchButton的选择tab，进行重新绘制。
 
 ```java
 @Override
