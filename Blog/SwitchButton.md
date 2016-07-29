@@ -1,7 +1,7 @@
 >版权声明：本文为博主原创文章，未经博主允许不得转载
 <br>转载请标明出处： http://kingja.github.io/
 
-![screenshot](https://github.com/KingJA/SwitchButton/blob/master/img/usage.gif)  
+<br>图在结尾，大家可以拉下去，看好了回来看正文，不然会分心 - -！
 
 ## 开篇
 > 艺术来源于生活
@@ -233,6 +233,8 @@ public interface OnSwitchListener {
         每当我看到别人的项目，如果刹那间，它点悟了我，或者让我回想起曾经的皱眉一刻，或者恰好是我未实现的灵光一闪，我会倍感亲切，马上滚动鼠标到顶Star一下。同样的，我希望您也能给我一颗Star，您给的这个Star是一只萤火虫，是我漆黑生活中的一盏明灯，是沙漠中的一片绿洲，是汪洋里的一座灯塔，给我动力，指引着我前进，让这世界充满爱,来吧，让这份爱一直传递下去吧。
 
 [[GitHub传送门，点Star送回城]](https://github.com/KingJA/SwitchButton) 
+<br>
+![screenshot](https://github.com/KingJA/SwitchButton/blob/master/img/usage.gif)  
 
 
 
