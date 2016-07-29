@@ -102,6 +102,8 @@ public SwitchMultiButton(Context context) {
 我们的交互是动态的，要根据点击进行重新绘制。基本的绘制步骤如下：
 
 **第1步**：绘制外层边框
+![attr](https://github.com/KingJA/SwitchButton/blob/master/img/stroke.png) 
+
 根据用户设置的strokeRadio(圆角半径)绘制外层的边框,默认是矩形，strokeRadio>0则是圆角矩形。**注意** 边框画笔是有width(粗度)的,笔刷的起点在中间的位置，因此我们需要画笔的落笔范围要往内收缩mStrokeWidth /2的距离(Line4-Line7)，这样才能确保画笔完整地出现在画布内。
 
 **第2步**：绘制垂直分割线。
