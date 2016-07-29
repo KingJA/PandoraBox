@@ -2,12 +2,12 @@
 <br>转载请标明出处： http://kingja.github.io/
 
 ------
-动态图在结尾，大家可以拉下去，想学习的同学看好了再回来看文章，高手直接进传送门 - -！
+动态图在结尾，大家可以拉下去看，想学习的同学看好了再回来看文章，高手直接进传送门 - -！
 ## 开篇
 > 艺术来源于生活
 
 **自定义View**来源于需求，来源于灵感。自定义View如果做的好，就是艺术，就是艺术，就是艺术。
-<br>文章讲的SwitchButton是大家开发过程中经常遇到的切换按钮，提供两个或两个以上的选项。
+<br>文章讲的SwitchButton是大家开发过程中经常遇到的切换按钮，提供两个或两个以上的选项，居家旅行必备。
 
 ## 正文
 文章是以SwitchButton的实现步骤作为大纲，主要包含以下内容：
@@ -197,7 +197,18 @@ public interface OnSwitchListener {
 ```
 ### 设置方法
 我们的SwitchButton的内容是由用户传入的，因此要对外提供数据设置方法
-
+```java
+public SwitchMultiButton setText(@NonNull List<String> list) {
+        if (list.size() > 1) {
+            this.mTabTextList = list;
+            mTabNum = list.size();
+            invalidate();
+            return this;
+        } else {
+            throw new IllegalArgumentException("the size of list should greater then 1");
+        }
+    }
+```
 
 ### 状态恢复
 带自定义View的界面难免会有切到后台的时候，再回来的时候要恢复它原来的状态，就要这这里做保存和恢复的设置。
