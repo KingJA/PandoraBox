@@ -156,7 +156,7 @@ public SwitchMultiButton(Context context) {
 **第3部**：绘制选中时候的填充矩形(圆角矩形)以及所有文字。
 <br>![selected](https://github.com/KingJA/SwitchButton/blob/master/img/selected.png) 
 <br>**注意** 绘制选中矩形要最左边(第一个)和最右边(最后一个)是矩形和半圆角矩形两种情况，因此用路径绘制比较合适(Line23，Line26 )。
-文字绘制比较简单，选中的用上色画笔，else用白色画笔即可(Line33，Line38 )。需要注意的是它们的 **位置** 的摆放。
+文字绘制比较简单，选中的用上色画笔，else用白色画笔即可(Line32，Line37 )。需要注意的是它们的 **位置** 的摆放。
 
 <br>选中的矩形绘制用矩形绘制直线和弧线连接而成(5-6应该是直线，没画好)
 <br>![leftPath](https://github.com/KingJA/SwitchButton/blob/master/img/leftPath.png) 
