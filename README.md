@@ -7,11 +7,7 @@ some useful rescource
 * [技术类教学视频](https://www.pluralsight.com/)
 * [DeerCV在线简历](http://www.deercv.com/)
 
-### Article
-
-### Personal
-* [KingJA的博客](http://kingja.github.io)
-* [KingJA的github](https://github.com/KingJA)
+### Design
 
 
 ### weekly
