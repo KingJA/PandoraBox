@@ -17,3 +17,8 @@ some useful rescource
 ### weekly
 * [Android Weekly](http://androidweekly.net/)
 
+### Technology Blog
+* [Medium](https://medium.com/)
+
+### News 
+* [Hacker News](https://news.ycombinator.com/news)
